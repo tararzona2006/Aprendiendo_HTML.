@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+/* Sobrescribe el estilo por defecto y establece el padding y el margen a cero */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+
+/* Texto color blanco en todas partes */
+
+body {
+  font-family: "lato", sans-serif;
+  color: white;
+}
+
+/* Hacer todo el texto de los links negro y sin decoración*/
+a {
+  color: black;
+  text-decoration: none;
+}
+
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+
+h2 {
+  font-size: 25px;
+  font-weight: 300;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 30px;
+}
+
+/* Todas las imágenes deben ser del mismo tamañño que su contenedor*/
+img {
+  width: 100%;
+}
+
+/* Remover el estilo a los elementos de una lista */
+li {
+  list-style-type: none;
+}
+
+
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Centra el elemento y establece un ancho máximo y se asegura que los elementos puedan fluir através*/
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: visible;
+}
+/* Aplica el color de fondo, altura y "padding"*/
+
+.navbar {
+  background-color: purple;
+  height: 70px;
+  padding: 0 30px;
+}
+
+/* Establece el tamaño de la fuente (font size), reduce el peso de loa fuente (font-weight), agrega margen y alto de línea (line height) */
+
+.navbar h1 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.navbar .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+/* Cambia el color de ambos enlaces a blanco, agrega padding entre si y margen también */
+
+.navbar a {
+  color: white;
+  padding: 9px;
+  margin: 0 10px;
+}
+
+.navbar a:hover {
+  color: #9867C5;
+  border-bottom: 3px solid #9867C5;
+}
+
+/* Añade margen bajo el texto */
+.showcase p {
+  margin-bottom: 30px;
+}
+
+/* Añade una sombra bajo la imágen */
+.showcase img {
+  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* Añade algo de padding al contenido del formulario */
+.showcase-form {
+  padding-left: 7px;
+}
+.showcase {
+  height: 300px;
+  background-color: purple;
+}
+
+.grid {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.grid-item-1,
+.grid-item-2 {
+  position: relative;
+  top: 50px;
+}
+
+.showcase input[type='email'] {
+  padding: 10px 70px 10px 0;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 6px;
+}
+
+.btn {
+  border-radius: 6px;
+  padding: 12px 20px;
+  background: #9867C5;
+  border: none;
+  margin-left: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.showcase-form {
+  margin: auto;
+}
+
+/* Change typeface and its size */
+.little-info {
+  font-size: 15px;
+  font-family: "poppins", sans-serif;
+
+}
+
+/* Centra el conetenedor, aplica un ancho máximo*/
+.lower-container {
+  margin: 120px auto;
+  padding: 0;
+  max-width: 1400px;
+}
+
+
+/* Apunta a todos los elementos h3 con clase CSS title */
+.title {
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+/* Apunta a todos los parrafos con la clase CSS text */
+.text {
+  color: black;
+  font-size: 19px;
+  width: 100%;
+  padding: 10px;
+  margin: 0, 20px;
+  text-align: justify;
+}
+
+/* Mostrar horizontalmente, poner un poco de espacio alrededor */
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Agregar algo de padding alrededor del contenedor. Alinear el texto al centro */
+.stats {
+  padding: 45px 50px;
+  text-align: center;
+}
+
+/* Aplicar margen y ancho */
+.stat {
+  margin: 0 30px;
+  text-align: center;
+  width: 800px;
+}
+
+.stats .fa {
+  color: purple;
+}
+
+.testimonial {
+  color: black;
+  padding: 40px;
+}
+
+/* Envuelve la imagen dentro de una figura circular y define su altura para que tome todo el alto de su elemento padre */
+
+.testimonial img {
+    height: 100%;
+    clip-path: circle();
+}
+
+/* Alinea el texto al centro */
+
+.testimonial h3{
+  text-align: center;
+}
+
+/* Crear un grid de tres columnas equidistantes. Definir un espaciado de 40px entre ellas */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+
+/* Crear una tarjeta en blanco con sombreado alrededor */
+.card {
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: -7px -7px 20px rgba(0, 0, 0, 0.2),
+               7px  7px 20px rgba(0, 0, 0, 0.2)
+}
+
+.circle {
+    background-color: transparent;
+    border:3px solid purple;
+    height:90px;
+    position: relative;
+    top: -30px;
+    left: 120px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:90px;
+}
+
+/* Add padding around the footer as well */
+
+footer {
+  background-color: purple;
+  padding: 20px 10px;
+}
+
+/* Sets all link texts to white and puts margin to the left and right */
+
+footer a {
+  color: white;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: #9867C5;
+  border-bottom: 2px solid #9867C5;
+}
+
+/* Tablets y pantallas más pequeñas */
+
+@media(max-width: 768px) {
+  .grid,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+/* Alinear todo el texto al centro. Esto moverá todo el texto, incluyendo el formulario al centro.*/
+
+.showcase {
+    height: auto;
+    text-align: center;
+  }
+
+/* Esto restablece el ancho del contendor de la imagen y agrega margen a la izquierda 
+*/ 
+
+.image {
+    width: 600px;
+    margin-left: 80px;
+  }
+
+/* Cambia las secciones de servicio de lado-a-lado para que cada una se posicione en una sóla linea. Centra el texto. */
+
+.stats .flex {
+    flex-direction: column;
+  }
+
+  .stats {
+    text-align: center;
+  }
+
+/* Asegura que cada sección en las estadísticas no exceda el ancho del elemento padre. */
+
+.stat {
+    width: 100%;
+    padding-right: 80px;
+  }
+
+/* Mueve el círculo al centro de la tarjeta  */
+
+.circle {
+      background-color: transparent;
+      border:3px solid purple;
+      height:90px;
+      position: relative;
+      top: -30px;
+      left: 270px;
+      border-radius:50%;
+      -moz-border-radius:50%;
+      -webkit-border-radius:50%;
+      width:90px;
+  }
+
+/* Dispositivos móviles */
+@media(max-width: 500px) {
+  .navbar {
+    height: 100px;
+  }
+
+/* Cambia la alineación. El logo del título se queda en la parte superior, los enlaces de navegación ahora se muestran debajo*/
+
+.navbar .flex {
+    flex-direction: column;
+  }
+
+
+/* Cuando pasamos encima el ratón, retienen el texto blanco y cambia el borde a negro */
+
+  .navbar a:hover {
+    color: white;
+    border-bottom: 2px solid black;
+  }
+
+
+/* Establecer el color púrpura para el fondo de los enlaces de navegación, redondear las esquinas de los bordes y darle algo de espaciado*/
+
+  .navbar ul {
+    background: #9867C5;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+
+
+/* Alinear el texto al centro */
+
+  .showcase {
+    height: auto;
+    text-align: center;
+  }
+
+
+/* Reducir el tamaño de la fuente */
+
+.little-info {
+    font-size: 13px;
+  }
+
+
+/* Reducir el ancho de la imágen */
+
+  .image {
+    width: 350px;
+    margin-left: 70px;
+  }
+
+  .stat {
+    margin-bottom: 40px;
+  }
+
+
+/* Mover el círculo una vez más */
+
+.circle {
+      background-color: transparent;
+      border:3px solid purple;
+      height:90px;
+      position: relative;
+      top: -30px;
+      left: 150px;
+      border-radius:50%;
+      -moz-border-radius:50%;
+      -webkit-border-radius:50%;
+      width:90px;
+  }
+}
+
+
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <div class="navbar">
+    <div class="container flex">
+      <h1 class="logo">Skilllz</h1>
+        <nav>
+          <ul>
+            <li class="nav"><a class="outline" href="">Log in</a></li>
+            <li class="nav"><a href="" class="outline">Check courses</a 		li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+
+  <section class="showcase">
+    <div class="container">
+        <div class="grid">
+          <div class="grid-item-1">
+            <div class="showcase-text">
+              <h1>Aprende cualquier habilidad digital que elijas, hoy!</h1>
+              <p class="supporting-text"> Más de 30,000 estudiantes están aprendiendo esto.</p>
+            </div>
+            <div class="showcase-form">
+              <form action="">
+                <input type="email" placeholder="Ingresa tu correo electrónico">
+                <input type="submit" class="btn" value="Empieza a aprender">
+              </form>
+              <p class="little-info">Prueba nuestros cursos gratuitos</p>
+            </div>
+          </div>
+
+          <div class="grid-item-2">
+            <div class="image">
+              <img src="/transparent.png" alt="">
+            </div>
+          </div>
+       </div>
+
+    </div>
+  </section>
+
+  <div class="lower-container container">
+    <section class="stats">
+      <div class="flex">
+        <div class="stat">
+          <i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>
+          <h3 class="title">Over 300 available courses</h3>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="stat">
+          <i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          <h3 class="title">Free certificate offered on all courses</h3>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="stat">
+          <i class="fa fa-credit-card-alt fa-2x" aria-hidden="true"></i>
+          <h3 class="title">Book 1on1 session for as low as $5</h3>
+          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="container">
+        <div class="testimonial grid-3">
+          <div class="card">
+            <div class="circle">
+              <img src="./images/4.jpg" alt="">
+            </div>
+            <h3>Aston</h3>
+            <p>He aprendido desarrollo web usando esta plataforma y diré que es la mejor plataforma para aprender. Definitivamente vale la pena la inversión!</p>
+          </div>
+          <div class="card">
+            <div class="circle">
+              <img src="./images/5.jpg" alt="">
+            </div>
+            <h3>Beth</h3>
+            <p>He aprendido redacción usando esta plataforma y diré que es la mejor plataforma para aprender. Definitivamente vale la pena la inversión!</p>
+          </div>
+          <div class="card">
+            <div class="circle">
+              <img src="./images/6.jpg" alt="">
+            </div>
+            <h3>Chris</h3>
+            <p>He aprendido marketing de afiliados usando esta plataforma y diré que es la mejor plataforma para aprender. Definitivamente vale la pena la inversión!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container grid-3">
+        <div class="copyright">
+          <h1>Skilllz</h1>
+          <p>Copyright &copy; 2021</p>
+        </div>
+        <nav class="links">
+          <ul>
+            <li><a href="" class="outline">Home</a></li>
+            <li><a href="" class="outline">Tutors</a></li>
+            <li><a href="" class="outline">Categories</a></li>
+          </ul>
+        </nav>
+        <div class="profiles">
+          <a href=""><em class="fab fa-twitter fa-2x"></em></a>
+          <a href=""><em class="fab fa-instagram fa-2x"></em></a>
+          <a href=""><em class="fab fa-facebook fa-2x"></em></a>
+          <a href=""><em class="fab fa-whatsapp fa-2x"></em></a>
+        </div>
+      </div>
+    </footer>
+<body>
+
+</body>
+</html>
